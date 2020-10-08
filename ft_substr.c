@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xsun <xiaobai@student.42tokyo.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/08 00:44:54 by xsun              #+#    #+#             */
-/*   Updated: 2020/10/09 02:24:41 by xsun             ###   ########.fr       */
+/*   Created: 2020/10/08 20:46:11 by xsun              #+#    #+#             */
+/*   Updated: 2020/10/08 22:16:17 by xsun             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-size_t		ft_strlcat(char *dst, const char *src, size_t dstsize)
+char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	size_t i = 0;
+	char *sub;
+	char *head;
 
-	i = 0;
-	while(i + 1 < dstsize && *dst)
-	{
-		i++;
-		dst++;
-	}
-	if (*dst)
-		return (dstsize + ft_strlen(src));
-	while (i + 1 < dstsize && *src)
-	{
-		++i;
-		*dst++ = *src++;
-	}
-	*dst = '\0';
-	return (i + ft_strlen(src));
+	if (s == NULL)
+		return (NULL);
+	while(start-- && *s)
+		s++;
+	if (!*s)
+		return (ft_strdup(""));
+	if ((sub = malloc(sizeof(char) * (len + 1))) == NULL)
+		return (NULL);
+	head = sub;
+	while(len--)
+		*head++ = *s++;
+	*head = '\0';
+	return (sub);
 }

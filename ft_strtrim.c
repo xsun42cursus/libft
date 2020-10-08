@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xsun <xiaobai@student.42tokyo.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/10/08 00:44:54 by xsun              #+#    #+#             */
-/*   Updated: 2020/10/09 02:24:41 by xsun             ###   ########.fr       */
+/*   Created: 2020/10/08 21:41:59 by xsun              #+#    #+#             */
+/*   Updated: 2020/10/08 21:51:37 by xsun             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-size_t		ft_strlcat(char *dst, const char *src, size_t dstsize)
+
+char *ft_strtrim(char const *s1, char const *set)
 {
-	size_t i = 0;
+	char *right;
+	size_t len;
+	size_t len_set;
 
-	i = 0;
-	while(i + 1 < dstsize && *dst)
-	{
-		i++;
-		dst++;
-	}
-	if (*dst)
-		return (dstsize + ft_strlen(src));
-	while (i + 1 < dstsize && *src)
-	{
-		++i;
-		*dst++ = *src++;
-	}
-	*dst = '\0';
-	return (i + ft_strlen(src));
+	len = ft_strlen(s1);
+	len_set = ft_strlen(set);
 }

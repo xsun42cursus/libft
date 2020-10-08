@@ -6,7 +6,7 @@
 /*   By: xsun <xiaobai@student.42tokyo.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/06 22:04:31 by xsun              #+#    #+#             */
-/*   Updated: 2020/10/08 16:53:47 by xsun             ###   ########.fr       */
+/*   Updated: 2020/10/08 22:13:50 by xsun             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,3 +36,6 @@ int		ft_tolower(int c);
 int		ft_toupper(int c);
 void	*ft_calloc(size_t count, size_t size);
 int		ft_atoi(const char *str);
+char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
+//char	*ft_strtrim(char const *s1, char const *set);

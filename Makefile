@@ -6,7 +6,7 @@
 #    By: xsun <xiaobai@student.42tokyo.jp>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/06 22:17:07 by xsun              #+#    #+#              #
-#    Updated: 2020/10/08 15:54:01 by xsun             ###   ########.fr        #
+#    Updated: 2020/10/08 22:13:39 by xsun             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,6 +36,9 @@ SOURCES	+=	ft_strnstr.c
 SOURCES	+=	ft_strrchr.c
 SOURCES	+=	ft_tolower.c
 SOURCES	+=	ft_toupper.c
+SOURCES	+=	ft_substr.c
+SOURCES	+=	ft_strjoin.c
+#SOURCES	+=	ft_strtrim.c
 
 OBJS	=$(SOURCES:%.c=%.o)
 
