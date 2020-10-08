@@ -6,7 +6,7 @@
 /*   By: xsun <xiaobai@student.42tokyo.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 00:50:59 by xsun              #+#    #+#             */
-/*   Updated: 2020/10/08 00:51:33 by xsun             ###   ########.fr       */
+/*   Updated: 2020/10/08 13:21:38 by xsun             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,15 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
+	char *find;
+	char *head;
 
+	find = ft_strchr(s, c);
+	head = find;
+	if (find == NULL || c == '\0')
+		return (find);
+	while(head != NULL)
+		if ((head = ft_strchr(head, c)) != NULL)
+			find = head++;
+	return (find);
 }
