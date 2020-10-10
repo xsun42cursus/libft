@@ -6,7 +6,7 @@
 /*   By: xsun <xiaobai@student.42tokyo.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 00:49:52 by xsun              #+#    #+#             */
-/*   Updated: 2020/10/08 17:43:58 by xsun             ###   ########.fr       */
+/*   Updated: 2020/10/10 23:20:23 by xsun             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	needle_len = ft_strlen(needle);
 	if (needle_len == 0)
 		return ((char *)haystack);
-
 	if (hay_len >= needle_len)
 		range = hay_len - needle_len;
 	else

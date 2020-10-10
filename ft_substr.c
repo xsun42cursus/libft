@@ -6,7 +6,7 @@
 /*   By: xsun <xiaobai@student.42tokyo.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 20:46:11 by xsun              #+#    #+#             */
-/*   Updated: 2020/10/08 22:16:17 by xsun             ###   ########.fr       */
+/*   Updated: 2020/10/10 23:58:02 by xsun             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,14 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 
 	if (s == NULL)
 		return (NULL);
-	while(start-- && *s)
+	while (start-- && *s)
 		s++;
 	if (!*s)
 		return (ft_strdup(""));
 	if ((sub = malloc(sizeof(char) * (len + 1))) == NULL)
 		return (NULL);
 	head = sub;
-	while(len--)
+	while (len--)
 		*head++ = *s++;
 	*head = '\0';
 	return (sub);

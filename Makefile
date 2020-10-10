@@ -6,7 +6,7 @@
 #    By: xsun <xiaobai@student.42tokyo.jp>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/06 22:17:07 by xsun              #+#    #+#              #
-#    Updated: 2020/10/08 22:13:39 by xsun             ###   ########.fr        #
+#    Updated: 2020/10/10 17:11:12 by xsun             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,9 +38,28 @@ SOURCES	+=	ft_tolower.c
 SOURCES	+=	ft_toupper.c
 SOURCES	+=	ft_substr.c
 SOURCES	+=	ft_strjoin.c
-#SOURCES	+=	ft_strtrim.c
+SOURCES	+=	ft_strtrim.c
+SOURCES	+=	ft_split.c
+SOURCES	+=	ft_itoa.c
+SOURCES	+=	ft_strmapi.c
+SOURCES	+=	ft_putchar_fd.c
+SOURCES	+=	ft_putstr_fd.c
+SOURCES	+=	ft_putendl_fd.c
+SOURCES	+=	ft_putnbr_fd.c
 
-OBJS	=$(SOURCES:%.c=%.o)
+BONUS_SRCS	=	$(SOURCES)
+BONUS_SRCS	+=	ft_lstnew.c
+BONUS_SRCS	+=	ft_lstadd_front.c
+BONUS_SRCS	+=	ft_lstsize.c
+BONUS_SRCS	+=	ft_lstlast.c
+BONUS_SRCS	+=	ft_lstadd_back.c
+BONUS_SRCS	+=	ft_lstdelone.c
+BONUS_SRCS	+=	ft_lstclear.c
+BONUS_SRCS	+=	ft_lstiter.c
+BONUS_SRCS	+=	ft_lstmap.c
+
+OBJS		=$(SOURCES:%.c=%.o)
+BONUS_OBJS	=$(BONUS_SRCS:%.c=%.o)
 
 CFLAGS	= -Wall -Wextra -Werror
 CC		= gcc
@@ -48,6 +67,9 @@ AR		= ar
 ARFLAGS	= cr
 
 all: $(NAME)
+
+bonus: $(BONUS_OBJS)
+	$(AR) $(ARFLAGS) $(NAME) $^
 
 $(NAME): $(OBJS)
 	$(AR) $(ARFLAGS) $@ $^
@@ -63,4 +85,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: fclean all clean re
+.PHONY: fclean all clean re bonus

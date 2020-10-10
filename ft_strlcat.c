@@ -6,7 +6,7 @@
 /*   By: xsun <xiaobai@student.42tokyo.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 00:44:54 by xsun              #+#    #+#             */
-/*   Updated: 2020/10/09 02:24:41 by xsun             ###   ########.fr       */
+/*   Updated: 2020/10/11 00:03:09 by xsun             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 size_t		ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	size_t i = 0;
+	size_t i;
 
 	i = 0;
-	while(i + 1 < dstsize && *dst)
+	while (i + 1 < dstsize && *dst)
 	{
 		i++;
 		dst++;
