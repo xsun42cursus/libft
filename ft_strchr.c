@@ -6,7 +6,7 @@
 /*   By: xsun <xiaobai@student.42tokyo.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/08 00:41:58 by xsun              #+#    #+#             */
-/*   Updated: 2020/10/11 12:12:53 by xsun             ###   ########.fr       */
+/*   Updated: 2020/10/11 13:11:40 by xsun             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while(1)
+	while (1)
 	{
 		if (*s == (char)c)
 			return ((char *)s);
