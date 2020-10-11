@@ -6,7 +6,7 @@
 /*   By: xsun <xiaobai@student.42tokyo.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/10 14:27:31 by xsun              #+#    #+#             */
-/*   Updated: 2020/10/10 23:46:15 by xsun             ###   ########.fr       */
+/*   Updated: 2020/10/11 12:26:46 by xsun             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,11 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list *last;
 
-	if (*lst == NULL)
+	if (lst == NULL)
+		return ;
+	if (lst == NULL || *lst == NULL)
 	{
+		if (*lst == NULL)
 		*lst = new;
 		return ;
 	}

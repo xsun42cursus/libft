@@ -6,7 +6,7 @@
 #    By: xsun <xiaobai@student.42tokyo.jp>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/06 22:17:07 by xsun              #+#    #+#              #
-#    Updated: 2020/10/10 17:11:12 by xsun             ###   ########.fr        #
+#    Updated: 2020/10/11 13:08:45 by xsun             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -58,8 +58,8 @@ BONUS_SRCS	+=	ft_lstclear.c
 BONUS_SRCS	+=	ft_lstiter.c
 BONUS_SRCS	+=	ft_lstmap.c
 
-OBJS		=$(SOURCES:%.c=%.o)
-BONUS_OBJS	=$(BONUS_SRCS:%.c=%.o)
+OBJS		=	$(SOURCES:%.c=%.o)
+BONUS_OBJS	=	$(BONUS_SRCS:%.c=%.o)
 
 CFLAGS	= -Wall -Wextra -Werror
 CC		= gcc
@@ -73,9 +73,6 @@ bonus: $(BONUS_OBJS)
 
 $(NAME): $(OBJS)
 	$(AR) $(ARFLAGS) $@ $^
-
-.c.o:
-	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	@$(RM) $(OBJS)

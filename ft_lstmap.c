@@ -6,14 +6,14 @@
 /*   By: xsun <xiaobai@student.42tokyo.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/10 15:00:13 by xsun              #+#    #+#             */
-/*   Updated: 2020/10/10 23:48:27 by xsun             ###   ########.fr       */
+/*   Updated: 2020/10/11 00:26:20 by xsun             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-static void	ft_lstclearbylst(t_list *l, void (*del)(void *))
+static void		ft_lstclearbylst(t_list *l, void (*del)(void *))
 {
 	t_list *tmp;
 
@@ -26,36 +26,37 @@ static void	ft_lstclearbylst(t_list *l, void (*del)(void *))
 	}
 }
 
-t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+static int		ft_map(t_list *dst, t_list *src, void *(*f)(void *))
+{
+	while (src)
+	{
+		if (src->content)
+			if ((dst->next = ft_lstnew(f(src->content))) == NULL)
+				return (-1);
+		src = src->next;
+		dst = dst->next;
+	}
+	return (0);
+}
+
+t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*mapped;
-	t_list	*head_map;
-	t_list	*head;
 
 	if (!lst)
 		return (NULL);
-	head = lst;
-	head_map = NULL;
-	if (head)
+	mapped = NULL;
+	if (lst)
 	{
-		if (head->content)
-			if ((head_map = ft_lstnew(f(head->content))) == NULL)
+		if (lst->content)
+			if ((mapped = ft_lstnew(f(lst->content))) == NULL)
 				return (NULL);
-		head = head->next;
+		lst = lst->next;
 	}
-	mapped = head_map;
-	while (head)
+	if (ft_map(mapped, lst, f) == -1)
 	{
-		if (head->content)
-		{
-			if ((head_map->next = ft_lstnew(f(head->content))) == NULL)
-			{
-				ft_lstclearbylst(mapped, del);
-				return (NULL);
-			}
-		}
-		head = head->next;
-		head_map = head_map->next;
+		ft_lstclearbylst(mapped, del);
+		return (NULL);
 	}
 	return (mapped);
 }

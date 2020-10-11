@@ -6,13 +6,12 @@
 /*   By: xsun <xiaobai@student.42tokyo.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 22:35:43 by xsun              #+#    #+#             */
-/*   Updated: 2020/10/11 00:02:36 by xsun             ###   ########.fr       */
+/*   Updated: 2020/10/11 00:28:18 by xsun             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 static const char	*skip(char const *s, const char c)
 {
@@ -89,7 +88,7 @@ char				**ft_split(char const *s, char c)
 	while (*s)
 	{
 		head = next(s, c);
-		if ((*split_head = (char *)malloc(sizeof(char) * (head - s + 1))) == NULL)
+		if ((*split_head = malloc(sizeof(char) * (head - s + 1))) == NULL)
 			return (free_all(split));
 		ft_strlcpy(*split_head, s, head - s + 1);
 		split_head++;
