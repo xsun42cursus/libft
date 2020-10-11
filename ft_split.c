@@ -6,7 +6,7 @@
 /*   By: xsun <xiaobai@student.42tokyo.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/09 22:35:43 by xsun              #+#    #+#             */
-/*   Updated: 2020/10/11 00:28:18 by xsun             ###   ########.fr       */
+/*   Updated: 2020/10/12 01:22:02 by xsun             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,10 @@ static char			**free_all(char **pp)
 		while (*head)
 		{
 			if (*head != NULL)
+			{
 				free(*head);
+				*head = NULL;
+			}
 			head++;
 		}
 		free(pp);

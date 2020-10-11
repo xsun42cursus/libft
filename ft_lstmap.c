@@ -6,7 +6,7 @@
 /*   By: xsun <xiaobai@student.42tokyo.jp>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/10/10 15:00:13 by xsun              #+#    #+#             */
-/*   Updated: 2020/10/11 00:26:20 by xsun             ###   ########.fr       */
+/*   Updated: 2020/10/12 01:43:51 by xsun             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ static void		ft_lstclearbylst(t_list *l, void (*del)(void *))
 	while (l)
 	{
 		tmp = l->next;
-		del(l);
+		del(l->content);
+		free(l);
 		l = tmp;
 	}
 }
