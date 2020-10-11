@@ -6,7 +6,7 @@
 #    By: xsun <xiaobai@student.42tokyo.jp>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/10/06 22:17:07 by xsun              #+#    #+#              #
-#    Updated: 2020/10/11 13:08:45 by xsun             ###   ########.fr        #
+#    Updated: 2020/10/11 21:47:20 by xsun             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -75,7 +75,7 @@ $(NAME): $(OBJS)
 	$(AR) $(ARFLAGS) $@ $^
 
 clean:
-	@$(RM) $(OBJS)
+	@$(RM) $(OBJS) $(BONUS_OBJS)
 
 fclean: clean
 	@$(RM) $(NAME)
